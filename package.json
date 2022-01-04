@@ -1,0 +1,23 @@
+{
+  "name": "log-viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Chee Yong <tojoeleeofficial@gmail.com>",
+  "license": "SEE LICENSE IN .LICENSE",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "helmet": "^4.6.0",
+    "mongoose": "^6.1.2",
+    "node-fetch": "^2.6.6",
+    "passport": "^0.5.2",
+    "passport-discord": "^0.1.4"
+  }
+}
