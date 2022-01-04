@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/log.css">
+    <link rel="stylesheet" href="/buttons.css">
+    <title>Document</title>
+</head>
+<body>
+  <%- include("_buttons.ejs", { auth: locals.auth }) %>
+  <%- locals.content %>
+</body>
+<script>
+function toTimestamp(date) {
+    const timestamp = date.toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      hour12: true,
+      minute: 'numeric'
+    });
+  
+    const wasToday = new Date().getDay() / date.getDay() === 1;
+    const wasYesterday = new Date().getDate() % date.getDate() === 1;
+    const isTommorow = date.getTime() % new Date().getDate() === 1;
+    
+    if (wasToday || wasYesterday)
+      return `Today at ${timestamp}`;
+    if (wasYesterday)
+      return `Yesterday at ${timestamp}`;
+    else if (isTommorow)
+      return `Tommorow at ${timestamp}`;
+    return date.toJSON().slice(0,10).split('-').reverse().join('/');
+  }
+  [...document.getElementsByClassName("timestamp")].forEach((e) => {
+  e.textContent = toTimestamp(new Date(e.textContent));
+  });
+  [...document.getElementsByClassName("close_at")].forEach((e) => {
+  e.textContent = `${new Date(e.textContent).toLocaleString()}`;
+})
+</script>
+</html>
