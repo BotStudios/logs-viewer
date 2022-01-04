@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/buttons.css">
+</head>
+<body>
+    <div class="center">
+        <h1>Logs Viewer</h1>
+        <p>A site to view Modmail logs</p>
+        <hr class="border">
+            <div class="home-buttons-wrapper">
+              <a href="https://github.com/BotStudios/modmailbot/tree/logs-viewer" class="home-btn">Github</a>
+              <a href="https://github.com/BotStudios/modmailbot/wiki" class="home-btn">Docs</a>
+              <a href="https://discord.gg/UayTfFd6p4" class="home-btn">Support</a>
+            </div>
+    </div>
+    <%- include("_buttons.ejs", { auth: locals.auth }) %>
+</body>
+</html>
