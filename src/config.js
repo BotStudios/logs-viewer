@@ -1,9 +1,6 @@
+const { version } = require('./../package.json');
+const config = require('./../config.js');
 module.exports = {
-    databaseURI: '',
-    port: 3000,
-    clientId: '',
-    clientSecret: '',
-    logsURI: '',
-    webhookURI: '',
-    oAuth2: false
+    version,
+    config
 }
